@@ -1,3 +1,5 @@
+Switch to Python3 first
+
 after git clone, cd into folder
 
 pip install virtualenv
@@ -6,9 +8,9 @@ python -m virtualenv env
 
 source ./env/bin/activate
 
-cd demo
-
 pip install -r requirements.txt
+
+cd demo
 
 python manage.py migrate
 
