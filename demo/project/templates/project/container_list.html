@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content_block %}
+
+
+<div class="list_content">
+    {% for container in container_list %}
+    <li style="list-style-type:none">
+        <a href="{% url 'project:container_detail' container %}">{{ container }}</a>
+
+        <form action="{% url 'project:remove_container' %}" method="post" class="deleteButton">
+            {% csrf_token %}
+            <input type="hidden" name="container" value={{ container }}>
+            <!--<input type="submit" value="Delete">-->
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+
+
+    <a class="addNew" href="{% url 'project:add_container' %}">Add New</a>
+
+    <form action="{% url 'project:logout' %}" method="post">
+        {% csrf_token %}
+        <!--<input type="submit" value="Log out">-->
+        <button type="submit" class="btn btn-info">Log out</button>
+    </form>
+    {% endblock %}
+</div>

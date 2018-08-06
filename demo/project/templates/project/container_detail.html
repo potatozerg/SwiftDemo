@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content_block %}
+
+<div class="list_content">
+    <a href="{% url 'project:container' %}"><-- Back</a>
+
+    <br>
+    <br>
+
+    {% for content in content_list %}
+    <li class="content_list">
+        {{ container_name }}/{{content}}
+        <a style="float: right;" href="{% url 'project:get_content_temp_url' container_name content %}">temp_url</a>
+        <form action="{% url 'project:remove_container_content' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="container" value={{ container_name }}>
+            <input type="hidden" name="content" value={{ content }}>
+            <!--<input type="submit" value="Delete">-->
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+
+    <br>
+
+    <a class="addNew" href="{% url 'project:add_container_content' container_name%}">Upload New</a>
+
+    <br>
+    <br>
+    <form action="{% url 'project:logout' %}" method="post">
+        {% csrf_token %}
+        <!--<input type="submit" value="Log out">-->
+        <button type="submit" class="btn btn-info">Log out</button>
+    </form>
+
+</div>
+
+{% endblock %}

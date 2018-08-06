@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content_block %}
+
+<div class="list_content">
+    <a href="{% url 'project:container' %}"><-- Back</a>
+
+    <br>
+    <br>
+    New Container name<br>
+    <form action="{% url 'project:add_container' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="container_name">
+        <!--<input type="submit" value="Create">-->
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+
+
+    <br>
+    <form action="{% url 'project:logout' %}" method="post">
+        {% csrf_token %}
+        <!--<input type="submit" value="Log out">-->
+        <button type="submit" class="btn btn-info">Log out</button>
+    </form>
+</div>
+{% endblock %}

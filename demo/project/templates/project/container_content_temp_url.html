@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content_block %}
+<div class="list_content" style="width: 100%">
+    <p>This url will expire in 30 seconds:</p>
+    <br>
+    <a href="{{url}}">{{url}}</a>
+</div>
+
+{% endblock %}

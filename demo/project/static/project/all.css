@@ -1,0 +1,54 @@
+
+.content {
+
+    margin: auto;
+    width: 20%;
+    padding: 30px;
+    font-size: 1.2em;
+}
+
+.list_content{
+
+    margin: auto;
+    width: 500px;
+    padding: 30px;
+    font-size: 1.2em;
+
+}
+
+.deleteButton {
+
+    display: inline-block;
+    float: right;
+}
+
+.addNew:link, .addNew:visited {
+    background-color: seagreen;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.addNew:hover, .addNew:active {
+    background-color: green;
+}
+
+.addNew {
+    margin-bottom: 10px;
+}
+
+
+.msg {
+    list-style-type: none
+}
+
+.content_list {
+    list-style-type: none
+}
+
+li {
+    font-size: 1em;
+    padding-bottom: 15px;
+}
